@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+
+Cypress.Commands.add("login", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('robinet78');
+    cy.get('#login_pass').type('bimber78');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
+Cypress.Commands.add('logout', () => {
+    cy.get('#logout').click({force: true})
+});
