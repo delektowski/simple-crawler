@@ -14,7 +14,7 @@ describe("Plant", () => {
         cy.get('#anpflanzen').click({force: true}).wait(1000);
 
         // Plant lettuce
-        for (let j = 1; j <= 205; j++) {
+        for (let j = 1; j <= 204; j++) {
             cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
                 if (checkIsNoObstacle(str)) {
                     cy.get(`#gardenTile${j}`).click({force: true}).wait(1000);
