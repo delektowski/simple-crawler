@@ -23,7 +23,7 @@ describe("Enter site", () => {
         }
 
         // Watering plants
-        cy.get('.water').click({force: true});
+        // cy.get('.water').click({force: true});
 
         // Logout and wait
         cy.logout().wait(1000000);
