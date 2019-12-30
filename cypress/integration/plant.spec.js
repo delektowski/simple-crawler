@@ -1,5 +1,5 @@
-describe("Enter site", () => {
-    it('crawling', () => {
+describe("Plant", () => {
+    it('planting', () => {
 
         // Check if there are planting obstacles
         const checkIsNoObstacle = (str) => {
@@ -26,16 +26,6 @@ describe("Enter site", () => {
         // cy.get('.water').click({force: true});
 
         // Logout and wait
-        cy.logout().wait(1000000);
-
-        // Login for gathering
-        cy.login();
-
-        // Gather plants
-        cy.get('.harvest').click({force: true});
-
-        //  Logout
-        cy.logout();
-
+        cy.logout()
     })
 });
