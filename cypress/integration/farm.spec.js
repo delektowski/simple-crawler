@@ -1,43 +1,41 @@
 describe("Enter site", () => {
-    for (let i = 4; i < 5; i++) {
-        it('crawling', () => {
+    it('crawling', () => {
 
-            // Check if there are planting obstacles
-            const checkIsNoObstacle = (str) => {
-                const regex = /baumstumpf|steine|maulwurf/ig;
-                return !regex.test(str);
-            };
+        // Check if there are planting obstacles
+        const checkIsNoObstacle = (str) => {
+            const regex = /baumstumpf|steine|maulwurf/ig;
+            return !regex.test(str);
+        };
 
-            // Login for planting
-            cy.login();
+        // Login for planting
+        cy.login();
 
-            // Select planting
-            cy.get('#anpflanzen').click({force: true}).wait(1000);
+        // Select planting
+        cy.get('#anpflanzen').click({force: true}).wait(1000);
 
-            // Plant lettuce
-            for (let j = 1; j <= 204; j++) {
-                cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
-                    if (checkIsNoObstacle(str)) {
-                        cy.get(`#gardenTile${j}`).click({force: true}).wait(1000);
-                    }
-                })
-            }
+        // Plant lettuce
+        for (let j = 1; j <= 205; j++) {
+            cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
+                if (checkIsNoObstacle(str)) {
+                    cy.get(`#gardenTile${j}`).click({force: true}).wait(1000);
+                }
+            })
+        }
 
-            // Watering plants
-            cy.get('.water').click({force: true});
+        // Watering plants
+        cy.get('.water').click({force: true});
 
-            // Logout and wait
-            cy.logout().wait(1000000);
+        // Logout and wait
+        cy.logout().wait(1000000);
 
-            // Login for gathering
-            cy.login();
+        // Login for gathering
+        cy.login();
 
-            // Gather plants
-            cy.get('.harvest').click({force: true});
+        // Gather plants
+        cy.get('.harvest').click({force: true});
 
-            //  Logout
-            cy.logout();
+        //  Logout
+        cy.logout();
 
-        })
-    }
+    })
 });
