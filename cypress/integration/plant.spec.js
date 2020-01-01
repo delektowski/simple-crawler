@@ -11,13 +11,14 @@ describe("Plant", () => {
         cy.login();
 
         // Select planting
-        cy.get('#anpflanzen').click({force: true}).wait(1000);
+        cy.get('#anpflanzen').click({force: true}).wait(500);
 
-        // Plant lettuce
+        // Plant
+        cy.get('.e14').click({force: true}).wait(500);
         for (let j = 1; j <= 204; j++) {
             cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
                 if (checkIsNoObstacle(str)) {
-                    cy.get(`#gardenTile${j}`).click({force: true}).wait(1000);
+                    cy.get(`#gardenTile${j}`).click({force: true}).wait(500);
                 }
             })
         }
