@@ -3,7 +3,7 @@ describe("Plant", () => {
 
         // Check if there are planting obstacles
         const checkIsNoObstacle = (str) => {
-            const regex = /baumstumpf|steine|maulwurf/ig;
+            const regex = /baumstumpf|steine|maulwurf|unkraut/ig;
             return !regex.test(str);
         };
 
@@ -14,7 +14,7 @@ describe("Plant", () => {
         cy.get('#anpflanzen').click({force: true}).wait(500);
 
         // Plant
-        cy.get('.e14').click({force: true}).wait(500);
+        // cy.get('.e14').click({force: true}).wait(500);
         for (let j = 1; j <= 204; j++) {
             cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
                 if (checkIsNoObstacle(str)) {

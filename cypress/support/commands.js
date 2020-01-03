@@ -27,8 +27,8 @@
 
 
 Cypress.Commands.add("login", () => {
-    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('robinet78');
-    cy.get('#login_pass').type('bimber78');
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('bonifacyowocki');
+    cy.get('#login_pass').type('Bombowiec');
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
