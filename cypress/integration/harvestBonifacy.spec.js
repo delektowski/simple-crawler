@@ -1,7 +1,9 @@
-describe("Harvest", () => {
-    it('harvesting', () => {
+describe("Harvesting", () => {
+
+    it('Harvesting Bonifacy', () => {
+
         // Login for gathering
-        cy.login();
+        cy.loginBonifacy();
 
         // Gather plants
         cy.get('.harvest').click({force: true});

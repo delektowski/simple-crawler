@@ -24,14 +24,36 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-
-
-Cypress.Commands.add("login", () => {
+Cypress.Commands.add("loginBonifacy", () => {
     cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('bonifacyowocki');
     cy.get('#login_pass').type('Bombowiec');
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+
+Cypress.Commands.add("loginKaczkaKurka", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('robinet78');
+    cy.get('#login_pass').type('bimber78');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
+
 Cypress.Commands.add('logout', () => {
     cy.get('#logout').click({force: true})
+});
+
+
+Cypress.Commands.add('plantingOrWatering', () => {
+    const checkIsNoObstacle = (str) => {
+        const regex = /baumstumpf|steine|maulwurf|unkraut/ig;
+        return !regex.test(str);
+    };
+
+    for (let j = 1; j <= 204; j++) {
+        cy.get(`#gardenTile${j}`).children().eq(0).invoke('attr', 'style').then(str => {
+            if (checkIsNoObstacle(str)) {
+                cy.get(`#gardenTile${j}`).click({force: true}).wait(200);
+            }
+        })
+    }
 });
