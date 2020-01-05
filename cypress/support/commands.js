@@ -37,6 +37,18 @@ Cypress.Commands.add("loginKaczkaKurka", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add("loginTataBonifacego", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('tatabonifacego');
+    cy.get('#login_pass').type('Bombowiec');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
+Cypress.Commands.add("loginMamaBonifacego", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('mamabonifacego');
+    cy.get('#login_pass').type('Bombowiec');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
 
 Cypress.Commands.add('logout', () => {
     cy.get('#logout').click({force: true})
