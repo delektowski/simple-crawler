@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for j in {1..200}; do
-  npx cypress run --spec cypress/integration/plantBonifacy
+  npx cypress run --spec cypress/integration/plantBonifacy.spec.js
   dtplant=$(date '+%d/%m/%Y %H:%M:%S')
   echo "Posadzono owocki $j razy. Data: $dtplant".spec.js
   sleep 575
