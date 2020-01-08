@@ -49,6 +49,12 @@ Cypress.Commands.add("loginMamaBonifacego", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add("loginGrillParty", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('grillparty2');
+    cy.get('#login_pass').type('Party7');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
 
 Cypress.Commands.add('logout', () => {
     cy.get('#logout').click({force: true})
