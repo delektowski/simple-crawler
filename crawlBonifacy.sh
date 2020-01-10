@@ -2,7 +2,7 @@
 
 owocki=$(cat <cypress/integration/plantBonifacy.spec.js | grep "\Plant\b" | cut -c 18-30)
 
-for j in {1..200}; do
+for j in {1..2000}; do
   npx cypress run --spec cypress/integration/plantBonifacy.spec.js
   dtplant=$(date '+%d/%m/%Y %H:%M:%S')
   echo "Posadzono $owocki $j razy. Data: $dtplant"
