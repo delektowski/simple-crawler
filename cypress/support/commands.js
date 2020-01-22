@@ -55,6 +55,12 @@ Cypress.Commands.add("loginGrillParty", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add("loginGuzinka", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('guzinka');
+    cy.get('#login_pass').type('geranium7');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
 
 Cypress.Commands.add('logout', () => {
     cy.get('#logout').click({force: true})
