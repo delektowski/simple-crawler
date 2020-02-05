@@ -61,6 +61,12 @@ Cypress.Commands.add("loginGuzinka", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add("loginSympatyczna", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('sympatyczna');
+    cy.get('#login_pass').type('Bombowiec');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
 
 Cypress.Commands.add('logout', () => {
     cy.get('#logout').click({force: true})
