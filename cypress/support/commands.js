@@ -30,6 +30,12 @@ Cypress.Commands.add("loginBonifacy", () => {
     cy.get('#submitlogin').click({force: true}).wait(1000);
 });
 
+Cypress.Commands.add("loginAlpejski", () => {
+    cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('alpejski');
+    cy.get('#login_pass').type('alpy7');
+    cy.get('#submitlogin').click({force: true}).wait(1000);
+});
+
 
 Cypress.Commands.add("loginKaczkaKurka", () => {
     cy.visit('https://www.zieloneimperium.pl/').get('#login_user').type('robinet78');
