@@ -1,9 +1,9 @@
-describe("Alpejski", () => {
+describe("Bonifacy", () => {
 
-    it('Planting Alpejski', () => {
+    it('Planting Bonifacy', () => {
 
         // Login for planting
-        cy.loginAlpejski();
+        cy.loginBonifacy();
 
         // Select planting
         cy.get('#anpflanzen').click({force: true}).wait(500);
