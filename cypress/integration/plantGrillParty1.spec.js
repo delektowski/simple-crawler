@@ -5,11 +5,25 @@ describe("GrillParty1", () => {
         // Login for planting
         cy.loginGrillParty1();
 
-        // Select planting
-        cy.get('#anpflanzen').click({force: true}).wait(500);
 
-        // Plant ogórek
-        cy.get('#regal_12').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force: true}).wait(500).plantingOrWatering();
+
+
+
+               // Enter to second garden
+                    cy.get("#wimpareaCar")
+                      .click({ force: true })
+                      .wait(500)
+                      .get("iframe")
+                      .then($iframe => {
+                        const $doc = $iframe.contents();
+
+                        cy.wrap($doc.find("img").eq(4)).click();
+
+                              // Select planting
+                                cy.get('#anpflanzen').click({force: true}).wait(500);
+
+        // Plant rzodkiewka
+        cy.get('#regal_14').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force: true}).wait(500).plantingOrWatering();
 
         // Wait and logout
         cy.wait(5000).logout()
