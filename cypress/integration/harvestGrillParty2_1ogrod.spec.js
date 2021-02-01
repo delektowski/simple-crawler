@@ -1,6 +1,6 @@
 describe("Harvesting", () => {
 
-    it('Harvesting GrillParty', () => {
+    it('Harvesting GrillParty2_1ogrod', () => {
 
         // Login for gathering
         cy.loginGrillParty2();

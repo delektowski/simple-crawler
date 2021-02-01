@@ -1,6 +1,6 @@
-describe("GrillParty2", () => {
+describe("GrillParty2_1ogrod", () => {
 
-    it('Planting GrillParty2', () => {
+    it('Planting GrillParty2_1ogrod', () => {
 
         // Login for planting
         cy.loginGrillParty2();

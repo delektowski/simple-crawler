@@ -15,7 +15,7 @@ describe("Harvesting", () => {
 
         // Gather plants
         cy.get('.harvest').click({force: true});
-
+         })
         //  Logout
         cy.logout();
     })
