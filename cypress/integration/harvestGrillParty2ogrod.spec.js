@@ -1,10 +1,9 @@
 describe("Harvesting", () => {
 
-    it('Harvesting GrillParty', () => {
+    it('Harvesting GrillParty2ogrod', () => {
 
         // Login for gathering
         cy.loginGrillParty();
-
             // Enter to second garden
             cy.get("#wimpareaCar")
               .click({ force: true })
@@ -12,7 +11,6 @@ describe("Harvesting", () => {
               .get("iframe")
               .then($iframe => {
                 const $doc = $iframe.contents();
-
                 cy.wrap($doc.find("img").eq(4)).click();
 
         // Gather plants
