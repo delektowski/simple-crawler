@@ -1,9 +1,9 @@
 describe("Harvesting", () => {
 
-    it('Harvesting Mamabonifacego', () => {
+    it('Harvesting Plantacjat', () => {
 
         // Login for gathering
-        cy.loginMamaBonifacego();
+        cy.loginPlantacjat();
 
         // Gather plants
         cy.get('.harvest').click({force: true});
