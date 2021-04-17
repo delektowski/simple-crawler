@@ -18,11 +18,13 @@ describe("Guzinka2", () => {
 
         cy.wrap($doc.find("img").eq(4)).click().wait(1000);
 
-        // Select Bławatki
-        cy.get('#lager_arrow_right').click({force: true}).wait(500).click({force: true}).wait(500)
-
-    // Plant Bławatki
-    cy.get('#regal_52').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force:     true}).wait(500).plantingOrWatering();
+//         // Select Bławatki
+//         cy.get('#lager_arrow_right').click({force: true}).wait(500).click({force: true}).wait(500)
+//
+//     // Plant Bławatki
+//     cy.get('#regal_52').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force:     true}).wait(500).plantingOrWatering();
+     // Plant Podlewanie
+     cy.get('#giessen').click({force: true}).wait(500).plantingOrWatering();
 })
     // Wait and logout
     cy.wait(5000).logout();
