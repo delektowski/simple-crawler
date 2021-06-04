@@ -16,7 +16,7 @@ describe("Guzinka2", () => {
       .then($iframe => {
         const $doc = $iframe.contents();
 
-        cy.wrap($doc.find("img").eq(4)).click().wait(1000);
+        cy.wrap($doc.find("#map_garden2")).click();
 
 //         // Select Bławatki
 //         cy.get('#lager_arrow_right').click({force: true}).wait(500).click({force: true}).wait(500)

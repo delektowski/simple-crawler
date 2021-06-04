@@ -12,7 +12,7 @@ describe("GrillParty2_2ogrod", () => {
                   .get("iframe")
                   .then($iframe => {
                   const $doc = $iframe.contents();
-                  cy.wrap($doc.find("img").eq(4)).click();
+                  cy.wrap($doc.find("#map_garden2")).click();
 
         // Select planting
         cy.get('#anpflanzen').click({force: true}).wait(500);

@@ -16,10 +16,16 @@ describe("Guzinka2", () => {
       .then($iframe => {
         const $doc = $iframe.contents();
 
-        cy.wrap($doc.find("img").eq(4)).click();
-    // Plant truskawki
-    cy.get('#regal_3').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force:     true}).wait(500).plantingOrWatering();
+        cy.wrap($doc.find("#map_garden3")).click();
+    // Select Bławatki
+    cy.get('#lager_arrow_right').click({force: true}).wait(500).click({force: true}).wait(500)
 
+
+    // Plant Bławatki
+    cy.get('#regal_52').eq(0).click({force: true}).wait(500).plantingOrWatering().get('#giessen').click({force:     true}).wait(500).plantingOrWatering();
+     // Plant Podlewanie
+     cy.get('#giessen').click({force: true}).wait(500).plantingOrWatering();
+})
     // Wait and logout
     cy.wait(5000).logout();
   });
