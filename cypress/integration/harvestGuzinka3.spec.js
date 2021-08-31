@@ -9,7 +9,7 @@ describe("Harvesting", () => {
  // Enter to second garden
  cy.get('#wimpareaCar').click({force: true}).wait(500).get("iframe").then( $iframe => {
    const $doc = $iframe.contents();
-   cy.wrap($doc.find(".link")).click();
+   cy.wrap($doc.find("#map_garden3")).click();
 
    // Gather plants
    cy.get('.harvest').click({force: true});

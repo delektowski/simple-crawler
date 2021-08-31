@@ -5,17 +5,20 @@ describe("Mama sympatyczna", () => {
         // Login for planting
         cy.loginSympatyczna();
 
-        // Select planting
-        cy.get('#anpflanzen').click({force: true}).wait(500);
+         cy.get('#wimpareaCar').click({force: true}).wait(500).get("#multiframe").then(cy.wrap).find("div")
+            
 
-        // Plant rzodkiewka
-        cy.get('#regal_14').eq(0).click({force:true}).wait(500).plantingOrWatering()
-
-        // Select watering
-         cy.get('#giessen').click({force:true}).wait(500).plantingOrWatering();
-
-        // Wait and logout
-        cy.wait(4000).logout()
+//         // Select planting
+//         cy.get('#anpflanzen').click({force: true}).wait(500);
+//
+//         // Plant rzodkiewka
+//         cy.get('#regal_14').eq(0).click({force:true}).wait(500).plantingOrWatering()
+//
+//         // Select watering
+//          cy.get('#giessen').click({force:true}).wait(500).plantingOrWatering();
+//
+//         // Wait and logout
+//         cy.wait(4000).logout()
     })
 
 });
