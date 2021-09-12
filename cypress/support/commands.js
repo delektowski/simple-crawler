@@ -99,7 +99,7 @@ Cypress.Commands.add('logout', () => {
 
 Cypress.Commands.add('plantingOrWatering', () => {
     const checkIsNoObstacle = (str) => {
-        const regex = /baumstumpf|steine|maulwurf|unkraut|mole|palme/ig;
+        const regex = /baumstumpf|steine|maulwurf|unkraut|mole|gegossen|palme/ig;
         return !regex.test(str);
     };
 
