@@ -11,9 +11,9 @@ describe("Guzinka", () => {
       .click({ force: true })
       .wait(500);
     // Plant Bławatki
-//                 cy.get('#regal_52').eq(0).click({force:
-//                 true}).wait(500).plantingOrWatering().get('#giessen').click({force:
-//                 true}).wait(500).plantingOrWatering();
+                cy.get('#regal_52').eq(0).click({force:
+                true}).wait(500).plantingOrWatering().get('#giessen').click({force:
+                true}).wait(500).plantingOrWatering();
 
      // Plant Podlewanie
      cy.get('#giessen').click({force: true}).wait(500).plantingOrWatering();
