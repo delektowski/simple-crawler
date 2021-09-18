@@ -3,7 +3,7 @@ describe("Jezioro", () => {
     it('Planting Jezioro', () => {
 
         // Login for planting
-        cy.loginBonifacy();
+        cy.loginJezioro();
 
         // Select planting
         cy.get('#anpflanzen').click({force: true}).wait(500);
