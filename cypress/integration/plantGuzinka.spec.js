@@ -3,7 +3,7 @@ describe("Guzinka", () => {
     // Login for planting
     cy.loginGuzinka();
 
-    // Select Bławatki
+    // Select Słoneczniki
     cy.get('#lager_arrow_right').click({force: true}).wait(500).click({force: true}).wait(500)
 
     // Select planting
@@ -11,7 +11,7 @@ describe("Guzinka", () => {
       .click({ force: true })
       .wait(500);
     // Plant Bławatki
-                cy.get('#regal_52').eq(0).click({force:
+                cy.get('#regal_48').eq(0).click({force:
                 true}).wait(500).plantingOrWatering().get('#giessen').click({force:
                 true}).wait(500).plantingOrWatering();
 
